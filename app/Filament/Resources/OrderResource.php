@@ -43,10 +43,14 @@ class OrderResource extends Resource
     {
         return $table
         ->columns([
-            Tables\Columns\TextColumn::make('id')->label('OrderID'),
-            Tables\Columns\TextColumn::make('status_id')->label('StátuszID'),
-            Tables\Columns\TextColumn::make('product_name')->label('Termék neve'),
-            Tables\Columns\TextColumn::make('quantity')->label('Mennyiség'),
+            Tables\Columns\TextColumn::make('id')
+            ->label('OrderID'),
+            Tables\Columns\TextColumn::make('status_id')
+            ->label('StátuszID'),
+            Tables\Columns\TextColumn::make('product_name')
+            ->label('Termék neve'),
+            Tables\Columns\TextColumn::make('quantity')
+            ->label('Mennyiség'),
         ])
             ->filters([
                 //
