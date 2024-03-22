@@ -25,7 +25,8 @@ class StatusResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->label('Név')->required(),
+                Forms\Components\TextInput::make('name')
+                ->label('Név')->required(),
                 Forms\Components\Toggle::make('is_active')->label('Aktivitás')->required(),
             ]);
             
@@ -35,8 +36,13 @@ class StatusResource extends Resource
     {
         return $table
         ->columns([
-            Tables\Columns\TextColumn::make('id')->label('ID'),
-            Tables\Columns\TextColumn::make('name')->label('Név'),
+            Tables\Columns\TextColumn::make('id')
+            ->label('ID'),
+            Tables\Columns\TextColumn::make('name')
+            ->label('Név'),
+            Tables\Columns\IconColumn::make('is_active')
+            ->label('Aktivitás')
+            ->boolean()
         ])
                 
             
