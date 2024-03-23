@@ -13,5 +13,5 @@ class Status extends Model
         'name',
         'is_active',
     ];
-    
+
 }
