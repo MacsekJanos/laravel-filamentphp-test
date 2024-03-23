@@ -14,4 +14,10 @@ class Item extends Model
         'condition',
         'color',
     ];
+    
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class,'order_item');
+    } 
+    
 }

@@ -15,4 +15,12 @@ class Order extends Model
         'status_id'
     ];
 
+public function status()
+{
+    return $this->belongsTo(Status::class);
+}
+public function items()
+{
+    return $this->belongsToMany(Item::class,'order_item');
+}
 }
