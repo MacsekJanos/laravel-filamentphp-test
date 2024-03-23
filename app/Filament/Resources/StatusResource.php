@@ -13,6 +13,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Filters\TernaryFilter;
 
 
 class StatusResource extends Resource
@@ -47,15 +48,24 @@ class StatusResource extends Resource
                 
             
             ->filters([
-                //
+                TernaryFilter::make('is_active')
+                ->label('Aktivitás')
+                ->trueLabel('Aktív')
+                ->falseLabel('Inaktív')
             ])
+            
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                ->label('Szerkesztés'),
+                Tables\Actions\DeleteAction::make()
+                ->label('Törlés'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                    Tables\Actions\DeleteBulkAction::make()
+                    ->label('Törlés'),
+                ])
+                ->label('Törlés'),
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),

@@ -55,11 +55,14 @@ class ItemsRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\AttachAction::make()
+                ->label('Termék hozzáadása')
 
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DetachAction::make(),
+                Tables\Actions\EditAction::make()
+                ->label('Szerkesztés'),
+                Tables\Actions\DetachAction::make()
+                ->label('Törlés'),
             ])
             ->bulkActions([
                 //Tables\Actions\BulkActionGroup::make([

@@ -58,12 +58,17 @@ class OrderResource extends Resource
                 
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                ->label('Szerkesztés'),
+                Tables\Actions\DeleteAction::make()
+                ->label('Törlés'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                    Tables\Actions\DeleteBulkAction::make()
+                    ->label('Törlés'),
+                ])
+                ->label('Törlés'),
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
