@@ -48,12 +48,14 @@ class OrderResource extends Resource
             Tables\Columns\TextColumn::make('status_id')
             ->label('StátuszID'),
             Tables\Columns\TextColumn::make('product_name')
-            ->label('Termék neve'),
+            ->label('Termék neve')
+            ->searchable(),
             Tables\Columns\TextColumn::make('quantity')
             ->label('Mennyiség'),
-        ])
+            ])
+            
             ->filters([
-                //
+                
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
